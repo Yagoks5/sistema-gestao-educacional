@@ -50,6 +50,16 @@ Cada usuário do sistema agora possui:
 
 ---
 
+### ✅ Fase 6 – Relatórios e Estatísticas (Polimorfismo e Laços)
+Adicionado o método **`gerarRelatorio()`** em:
+- `Aluno`
+- `Professor`
+- `Curso`
+
+Implementado **menu interativo** no `Main` para gerar relatórios individuais ou gerais de forma **polimórfica**.
+
+---
+
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17+**

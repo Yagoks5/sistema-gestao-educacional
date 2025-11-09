@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // Fase 1: Criando cursos, professores e alunos
@@ -85,5 +88,61 @@ public class Main {
         alunoLogin.exibirPerfil();
         profLogin.exibirPerfil();
         admin.exibirPerfil();
+
+        System.out.println("\n\n=== FASE 6 - RELATÓRIOS E ESTATÍSTICAS ===\n");
+        ArrayList<Object> entidades = new ArrayList<>();
+        entidades.add(aluno1);
+        entidades.add(profJoao);
+        entidades.add(ads);
+
+        Scanner sc = new Scanner(System.in);
+        int opcao;
+
+        do {
+            System.out.println("=== MENU DE RELATÓRIOS ===");
+            System.out.println("1. Gerar relatórios individuais");
+            System.out.println("2. Gerar todos os relatórios");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("Escolha o tipo de relatório:");
+                    System.out.println("1. Aluno");
+                    System.out.println("2. Professor");
+                    System.out.println("3. Curso");
+                    int tipo = sc.nextInt();
+
+                    switch (tipo) {
+                        case 1 -> aluno1.gerarRelatorio();
+                        case 2 -> profJoao.gerarRelatorio();
+                        case 3 -> ads.gerarRelatorio();
+                        default -> System.out.println("Opção inválida!");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("\n--- Relatórios gerais ---");
+                    for (Object entidade : entidades) {
+                        if (entidade instanceof Aluno a) a.gerarRelatorio();
+                        else if (entidade instanceof Professor p) p.gerarRelatorio();
+                        else if (entidade instanceof Curso c) c.gerarRelatorio();
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 0);
+
+        sc.close();
+
+
     }
 }

@@ -58,7 +58,13 @@ public class Aluno extends Usuario implements Autenticacao {
         return matricula;
     }
 
-
-
+    public void gerarRelatorio() {
+        System.out.println("=== Relatório do Aluno ===");
+        System.out.println("Nome: " + nome);
+        System.out.println("Matrícula: " + matricula);
+        System.out.println("Curso: " + curso.getNome());
+        System.out.println("Quantidade de avaliações: " + avaliacoes.size());
+        System.out.println("==========================\n");
+    }
 
 }

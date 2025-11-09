@@ -40,6 +40,14 @@ public class Curso {
         System.out.println("Carga horária: " + this.cargaHoraria + " horas");
     }
 
+    public void gerarRelatorio() {
+        System.out.println("=== Relatório do Curso ===");
+        System.out.println("Nome: " + nome);
+        System.out.println("Código: " + codigo);
+        System.out.println("Carga horária: " + cargaHoraria + "h");
+        System.out.println("==========================\n");
+    }
+
 }
 
 

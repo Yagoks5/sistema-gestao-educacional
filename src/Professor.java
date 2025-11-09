@@ -28,4 +28,13 @@ public class Professor extends Usuario implements Autenticacao {
     }
 
 
+    public void gerarRelatorio() {
+        System.out.println("=== Relatório do Professor ===");
+        System.out.println("Nome: " + nome);
+        System.out.println("Especialidade: " + especialidade);
+        System.out.println("Registro: " + registro);
+        System.out.println("==============================\n");
+    }
+
+
 }
