@@ -26,6 +26,17 @@ O projeto foi desenvolvido em **Java**, seguindo boas práticas de **programaç�
 - Exibição das avaliações e notas de cada aluno
 - Aplicação de **encapsulamento e validações** para evitar manipulação direta dos dados
 
+## 🧩 Fase 4 – Herança e Polimorfismo
+Implementadas as classes **CursoPresencial** e **CursoEAD**, que herdam de `Curso` e sobrescrevem o método `exibirCurso()` para exibir informações específicas:
+
+- `CursoPresencial`: inclui a sala de aula.
+- `CursoEAD`: inclui a plataforma virtual.
+
+**Conceitos aplicados:**
+- Herança
+- Sobrescrita de métodos
+- Polimorfismo
+
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17+**

@@ -14,6 +14,9 @@ public class Main {
         Aluno aluno3 = new Aluno("Pedro Costa", "MAT003", si);
         Aluno aluno4 = new Aluno("Mariana Lima", "MAT004", ads);
 
+        Curso cursoPresencial = new CursoPresencial("Engenharia de Software", "ENG101", 3000, "Sala 12 - Bloco G");
+        Curso cursoEAD = new CursoEAD("Ciência de Dados", "CD202", 2800, "Studeo");
+
         // Exibindo informações básicas
         ads.exibirCurso();
         System.out.println();
@@ -68,6 +71,12 @@ public class Main {
         aluno1.exibirAluno();
         aluno2.exibirAluno(); // mostrar que nao tem avaliacao encontrada.
 
+
+        System.out.println("\n\n=== FASE 4 - Diferentes Tipos de Cursos ===\n");
+
+        cursoPresencial.exibirCurso();
+        System.out.println("===========================");
+        cursoEAD.exibirCurso();
 
 
     }
