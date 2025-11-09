@@ -19,7 +19,13 @@ O projeto foi desenvolvido em **Java**, seguindo boas práticas de **programaç�
 - Métodos para adicionar e remover alunos
 - Exibição de resumo da turma
 
-*(Demais fases serão adicionadas conforme o desenvolvimento do projeto)*
+### 🧠 Fase 3 – Controle de Avaliações (Encapsulamento)
+- Criação da classe `Avaliacao` com atributos privados `nota` e `descricao`
+- Método `atribuirNota(valor)` para controlar a atribuição da nota, garantindo valores entre **0 e 10**
+- Associação de avaliações aos alunos
+- Exibição das avaliações e notas de cada aluno
+- Aplicação de **encapsulamento e validações** para evitar manipulação direta dos dados
+
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17+**

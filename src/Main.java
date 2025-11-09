@@ -51,5 +51,26 @@ public class Main {
         System.out.println("\n=== DEMONSTRANDO RELACIONAMENTOS ===");
         System.out.println("Aluno " + aluno1.getNome() + " está no curso: " + aluno1.getCurso().getNome());
         System.out.println("Turma " + turmaAds1.getCodigo() + " tem " + turmaAds1.getQuantidadeAlunos() + " alunos");
+
+
+        System.out.println("\n\n=== FASE 3 - CONTROLE DE AVALIAÇÕES ===\n");
+
+        Avaliacao prova1 = new Avaliacao("Prova 1");
+        Avaliacao trabalho1 = new Avaliacao("Trabalho 1");
+
+        aluno1.adicionarAvaliacao(prova1);
+        aluno1.adicionarAvaliacao(trabalho1);
+
+        // Tentando atribuir notas
+        prova1.atribuirNota(8.5);
+        trabalho1.atribuirNota(9.0);
+
+        aluno1.exibirAluno();
+        aluno2.exibirAluno(); // mostrar que nao tem avaliacao encontrada.
+
+
+
     }
+
+
 }
