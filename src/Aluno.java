@@ -1,41 +1,32 @@
 import java.util.ArrayList;
 
-public class Aluno {
-    private String nome;
+public class Aluno extends Usuario implements Autenticacao {
     private String matricula;
     private Curso curso;
     private ArrayList<Avaliacao> avaliacoes;
 
-    public Aluno(String nome, String matricula, Curso curso) {
-        if(nome == null || nome.isBlank()) {
-            throw new IllegalArgumentException("Nome do aluno inválido");
-        }
-
+    public Aluno(String nome,String login, String senha, String matricula, Curso curso) {
+        super(nome, login, senha);
         if(matricula == null || matricula.isBlank()) {
-            throw new IllegalArgumentException("Matricula do aluno inválida");
+            throw new IllegalArgumentException("Matricula inválida");
         }
 
-        if(curso == null) {
-            throw new IllegalArgumentException("Curso do aluno não pode ser nulo");
-        }
-
-        this.nome = nome;
         this.matricula = matricula;
         this.curso = curso;
         this.avaliacoes = new ArrayList<>();
     }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public String getMatricula() {
-        return matricula;
-    }
+   @Override
+   public boolean autenticar(String login, String senha) {
+        return this.login.equals(login) && this.senha.equals(senha);
+   }
 
-    public Curso getCurso() {
-        return curso;
-    }
+   @Override
+   public void exibirPerfil() {
+        System.out.println("Perfil do aluno " + nome);
+        System.out.println("Curso " + curso.getNome());
+   }
 
     public void adicionarAvaliacao(Avaliacao avaliacao){
         if (avaliacao != null) {
@@ -57,6 +48,14 @@ public class Aluno {
                 System.out.println(avaliacao.getNota() >=0 ? avaliacao.getNota() : "Sem nota");
             }
         }
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public String getMatricula() {
+        return matricula;
     }
 
 

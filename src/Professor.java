@@ -1,34 +1,24 @@
-public class Professor {
-    private String nome;
+public class Professor extends Usuario implements Autenticacao {
     private String especialidade;
     private String registro;
 
-    public Professor(String nome, String especialidade, String registro) {
+    public Professor(String nome, String login, String senha, String especialidade, String registro) {
+        super(nome, login, senha);
 
-       if(nome == null || nome.isBlank()) {
-           throw new IllegalArgumentException("Nome do professor inválido");
-       }
-
-       if (registro == null || registro.isBlank()) {
-           throw new IllegalArgumentException("Registro do professor inválido");
-       }
-
-        this.nome = nome;
         this.especialidade = especialidade;
         this.registro = registro;
+
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public boolean autenticar(String login, String senha) {
+        return this.login.equals(login) && this.senha.equals(senha);
     }
 
-
-    public String getEspecialidade() {
-        return especialidade;
-    }
-
-    public String getRegistro() {
-        return registro;
+    @Override
+    public void exibirPerfil() {
+        System.out.println("Perfil do professor " + nome);
+        System.out.println("Especialidade: " + especialidade);
     }
 
     public void exibirProfessor(){

@@ -6,13 +6,13 @@ public class Main {
         Curso ads = new Curso("Análise e Desenvolvimento de Sistemas", "ADS2417", 2400);
         Curso si = new Curso("Sistemas de Informação", "SI2024", 2600);
 
-        Professor profJoao = new Professor("João Silva", "Programação", "PROF001");
-        Professor profMaria = new Professor("Maria Santos", "Banco de Dados", "PROF002");
+        Professor profJoao = new Professor("João Silva", "joao", "abcd", "Programação", "PROF001");
+        Professor profMaria = new Professor("Maria Santos", "maria", "123", "Banco de Dados", "PROF002");
 
-        Aluno aluno1 = new Aluno("Carlos Oliveira", "MAT001", ads);
-        Aluno aluno2 = new Aluno("Ana Pereira", "MAT002", ads);
-        Aluno aluno3 = new Aluno("Pedro Costa", "MAT003", si);
-        Aluno aluno4 = new Aluno("Mariana Lima", "MAT004", ads);
+        Aluno aluno1 = new Aluno("Carlos Oliveira", "carlos", "1234", "MAT001", ads);
+        Aluno aluno2 = new Aluno("Ana Pereira", "ana", "4321", "MAT002", ads);
+        Aluno aluno3 = new Aluno("Pedro Costa", "pedro", "9999", "MAT003", si);
+        Aluno aluno4 = new Aluno("Mariana Lima", "mariana", "5555", "MAT004", ads);
 
         Curso cursoPresencial = new CursoPresencial("Engenharia de Software", "ENG101", 3000, "Sala 12 - Bloco G");
         Curso cursoEAD = new CursoEAD("Ciência de Dados", "CD202", 2800, "Studeo");
@@ -27,30 +27,23 @@ public class Main {
         // Fase 2: Gerenciando turmas
         System.out.println("\n\n=== FASE 2 - ESTRUTURA ACADÊMICA ===\n");
 
-        // Criando turmas
         Turma turmaAds1 = new Turma("TADS2417A", profJoao, ads);
         Turma turmaSi1 = new Turma("TSI2024A", profMaria, si);
 
-        // Adicionando alunos às turmas
         turmaAds1.adicionarAluno(aluno1);
         turmaAds1.adicionarAluno(aluno2);
         turmaAds1.adicionarAluno(aluno4);
-
         turmaSi1.adicionarAluno(aluno3);
 
-        // Tentando adicionar aluno duplicado
-        turmaAds1.adicionarAluno(aluno1);
+        turmaAds1.adicionarAluno(aluno1); // duplicado
 
-        // Mostrando resumo das turmas
         turmaAds1.mostrarResumo();
         turmaSi1.mostrarResumo();
 
-        // Testando remoção de aluno
         System.out.println("\n--- Removendo aluno da turma ---");
         turmaAds1.removerAluno(aluno1);
         turmaAds1.mostrarResumo();
 
-        // Demonstrando relacionamentos
         System.out.println("\n=== DEMONSTRANDO RELACIONAMENTOS ===");
         System.out.println("Aluno " + aluno1.getNome() + " está no curso: " + aluno1.getCurso().getNome());
         System.out.println("Turma " + turmaAds1.getCodigo() + " tem " + turmaAds1.getQuantidadeAlunos() + " alunos");
@@ -64,12 +57,11 @@ public class Main {
         aluno1.adicionarAvaliacao(prova1);
         aluno1.adicionarAvaliacao(trabalho1);
 
-        // Tentando atribuir notas
         prova1.atribuirNota(8.5);
         trabalho1.atribuirNota(9.0);
 
         aluno1.exibirAluno();
-        aluno2.exibirAluno(); // mostrar que nao tem avaliacao encontrada.
+        aluno2.exibirAluno(); // sem avaliação
 
 
         System.out.println("\n\n=== FASE 4 - Diferentes Tipos de Cursos ===\n");
@@ -79,7 +71,19 @@ public class Main {
         cursoEAD.exibirCurso();
 
 
+        System.out.println("\n\n=== FASE 5 - AUTENTICAÇÃO E PERFIS ===\n");
+
+        Aluno alunoLogin = new Aluno("Carlos Oliveira", "carlos", "1234", "MAT001", ads);
+        Professor profLogin = new Professor("João Silva", "joao", "abcd", "Programação", "PROF001");
+        Administrador admin = new Administrador("Clara Menezes", "admin", "admin123", "Coordenadora");
+
+        System.out.println("Tentando login de aluno: " + (alunoLogin.autenticar("carlos", "1234") ? "Sucesso" : "Falha"));
+        System.out.println("Tentando login de professor: " + (profLogin.autenticar("joao", "xyz") ? "Sucesso" : "Falha"));
+        System.out.println("Tentando login de administrador: " + (admin.autenticar("admin", "admin123") ? "Sucesso" : "Falha"));
+
+        System.out.println("\n--- Exibindo Perfis ---");
+        alunoLogin.exibirPerfil();
+        profLogin.exibirPerfil();
+        admin.exibirPerfil();
     }
-
-
 }

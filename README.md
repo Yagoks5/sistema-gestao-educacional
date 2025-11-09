@@ -37,6 +37,19 @@ Implementadas as classes **CursoPresencial** e **CursoEAD**, que herdam de `Curs
 - Sobrescrita de métodos
 - Polimorfismo
 
+## 🔐 Fase 5 – Autenticação e Perfis (Interfaces e Abstração)
+Implementados:
+- **Interface `Autenticacao`** com o método `autenticar(login, senha)`.
+- **Classe abstrata `Usuario`**, generalizando os atributos comuns (`nome`, `login`, `senha`).
+- **Classes `Aluno`, `Professor` e `Administrador`** implementam a autenticação e exibem perfis personalizados.
+
+Cada usuário do sistema agora possui:
+- Login e senha;
+- Método de autenticação;
+- Perfil exibido de forma específica.
+
+---
+
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17+**
