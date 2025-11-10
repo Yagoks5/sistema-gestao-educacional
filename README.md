@@ -60,6 +60,53 @@ Implementado **menu interativo** no `Main` para gerar relatórios individuais ou
 
 ---
 
+### 🧱 Fase 7 – Arquitetura em Camadas (Boa Prática de Projeto)
+
+Para tornar o sistema mais **modular, escalável e de fácil manutenção**, foi aplicada a **arquitetura em camadas**, separando as responsabilidades principais do projeto.
+
+#### 🗂️ Estrutura de Pacotes
+O projeto foi reorganizado da seguinte forma:
+
+```
+├── model
+│   ├── Administrador.java
+│   ├── Aluno.java
+│   ├── Autenticacao.java
+│   ├── Avaliacao.java
+│   ├── CursoEAD.java
+│   ├── Curso.java
+│   ├── CursoPresencial.java
+│   ├── Professor.java
+│   ├── Turma.java
+│   └── Usuario.java
+├── repository
+│   ├── CursoRepository.java
+│   ├── TurmaRepository.java
+│   └── UsuarioRepository.java
+├── service
+│   ├── AutenticacaoService.java
+│   ├── RelatorioService.java
+│   └── TurmaService.java
+└── ui
+    ├── Main.java
+    └── MenuUI.java
+
+```
+
+#### 🔄 Integração entre as Camadas
+- A camada **model** define as entidades básicas do sistema.
+- A camada **repository** gerencia o armazenamento e recuperação dos dados (em memória).
+- A camada **service** aplica as regras de negócio, validações e lógica de aplicação.
+- A camada **ui** é responsável pela interação com o usuário (menu, relatórios, etc.).
+- A classe **Main** atua como ponto central, conectando todas as camadas para execução do sistema.
+
+#### 🎯 Benefícios
+- Melhor **organização** e **separação de responsabilidades**;
+- Facilita **testes unitários** e futuras expansões;
+- Aproxima o projeto de uma **arquitetura MVC simplificada**, seguindo boas práticas de engenharia de software.
+
+---
+
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17+**

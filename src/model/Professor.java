@@ -1,13 +1,13 @@
+package model;
+
 public class Professor extends Usuario implements Autenticacao {
     private String especialidade;
     private String registro;
 
     public Professor(String nome, String login, String senha, String especialidade, String registro) {
         super(nome, login, senha);
-
         this.especialidade = especialidade;
         this.registro = registro;
-
     }
 
     @Override
@@ -27,7 +27,6 @@ public class Professor extends Usuario implements Autenticacao {
         System.out.println("Registro do professor: " + this.registro);
     }
 
-
     public void gerarRelatorio() {
         System.out.println("=== Relatório do Professor ===");
         System.out.println("Nome: " + nome);
@@ -35,6 +34,4 @@ public class Professor extends Usuario implements Autenticacao {
         System.out.println("Registro: " + registro);
         System.out.println("==============================\n");
     }
-
-
 }

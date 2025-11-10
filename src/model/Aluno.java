@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 
 public class Aluno extends Usuario implements Autenticacao {
@@ -10,23 +12,21 @@ public class Aluno extends Usuario implements Autenticacao {
         if(matricula == null || matricula.isBlank()) {
             throw new IllegalArgumentException("Matricula inválida");
         }
-
         this.matricula = matricula;
         this.curso = curso;
         this.avaliacoes = new ArrayList<>();
     }
 
-
-   @Override
-   public boolean autenticar(String login, String senha) {
+    @Override
+    public boolean autenticar(String login, String senha) {
         return this.login.equals(login) && this.senha.equals(senha);
-   }
+    }
 
-   @Override
-   public void exibirPerfil() {
+    @Override
+    public void exibirPerfil() {
         System.out.println("Perfil do aluno " + nome);
         System.out.println("Curso " + curso.getNome());
-   }
+    }
 
     public void adicionarAvaliacao(Avaliacao avaliacao){
         if (avaliacao != null) {
@@ -65,6 +65,8 @@ public class Aluno extends Usuario implements Autenticacao {
         System.out.println("Curso: " + curso.getNome());
         System.out.println("Quantidade de avaliações: " + avaliacoes.size());
         System.out.println("==========================\n");
+
+
     }
 
 }

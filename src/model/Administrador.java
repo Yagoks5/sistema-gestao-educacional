@@ -1,7 +1,8 @@
+package model;
+
 public class Administrador extends Usuario implements Autenticacao {
     public String cargo;
-
-    public Administrador(String nome, String login, String senha, String cargo)  {
+    public Administrador(String nome, String login, String senha, String cargo) {
         super(nome, login, senha);
         this.cargo = cargo;
     }
@@ -12,7 +13,7 @@ public class Administrador extends Usuario implements Autenticacao {
     }
 
     @Override
-    public void exibirPerfil() {
+    public void exibirPerfil(){
         System.out.println("Perfil do Administrador " + nome);
         System.out.println("Cargo " + cargo);
     }

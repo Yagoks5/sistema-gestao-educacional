@@ -1,5 +1,6 @@
-public class CursoEAD extends Curso{
-        private String plataforma;
+package model;
+public class CursoEAD extends Curso {
+    private String plataforma;
 
     public CursoEAD(String nome, String codigo, int cargaHoraria, String plataforma) {
         super(nome, codigo, cargaHoraria);

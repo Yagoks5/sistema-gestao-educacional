@@ -1,3 +1,5 @@
+package model;
+
 public class Avaliacao {
     private double nota;
     private String descricao;
@@ -6,7 +8,6 @@ public class Avaliacao {
         if(descricao == null || descricao.isBlank()){
             throw new IllegalArgumentException("O campo descricao deve ser preenchido.");
         }
-
         this.descricao = descricao;
         this.nota = -1; // forma que encontrei de mostrar que nao foi atribuida
     }
@@ -26,9 +27,9 @@ public class Avaliacao {
         return descricao;
     }
 
-    public void exibirAvaliacao(){
+    public void exibirAvaliacao() {
         System.out.println("Avaliação: " + descricao);
-        if(nota >=0) {
+        if (nota >= 0) {
             System.out.println("Nota: " + nota);
         } else {
             System.out.println("Nota ainda não atribuida");

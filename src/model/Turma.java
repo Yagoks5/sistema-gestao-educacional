@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 
 public class Turma {
@@ -10,7 +12,6 @@ public class Turma {
         if (codigo == null || codigo.isBlank()) {
             throw new IllegalArgumentException("Código da turma invalido");
         }
-
         this.codigo = codigo;
         this.professor = professor;
         this.curso = curso;
@@ -25,7 +26,6 @@ public class Turma {
         else {
             System.out.println("Aluno inválido ou já está na turma" + codigo);
         }
-
     }
 
     public void removerAluno(Aluno aluno) {
@@ -72,6 +72,4 @@ public class Turma {
     public int getQuantidadeAlunos() {
         return listaAlunos.size();
     }
-
-
 }
