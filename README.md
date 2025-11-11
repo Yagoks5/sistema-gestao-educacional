@@ -107,6 +107,20 @@ O projeto foi reorganizado da seguinte forma:
 
 ---
 
+### 🧱 Fase Final – Sistema Educacional Consolidado
+- Chegou o grande momento! A EduConnect vai apresentar o protótipo a investidores e precisa do sistema completo.
+
+- Desafio:
+- Consolidar todas as funcionalidades.
+- Criar um menu interativo que permita:
+- Cadastrar alunos, professores e cursos.
+- Criar turmas e associar alunos/professores.
+- Registrar avaliações.
+- Gerar relatórios gerais.
+- Testar cenários de sucesso e falha.
+
+---
+
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17+**
